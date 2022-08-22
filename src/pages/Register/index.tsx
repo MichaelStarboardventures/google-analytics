@@ -6,6 +6,7 @@ import {
 } from '@ant-design/pro-components';
 import { Button } from 'antd';
 import { useState } from 'react';
+import { history } from 'umi';
 
 const Register = () => {
   const [visible, setVisible] = useState(false);
@@ -73,6 +74,8 @@ const Register = () => {
         visible={visible}
         onFinish={async () => {
           setVisible(false);
+
+          history.push('/login');
         }}
       >
         <Button
